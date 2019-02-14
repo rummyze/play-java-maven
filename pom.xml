@@ -92,9 +92,13 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${jar.plugin.version}</version>
                 <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                     <archive>
+                        <manifestEntries>
+							<WebLogic-Application-Version>${project.version}</WebLogic-Application-Version>
+						</manifestEntries>
                         <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
